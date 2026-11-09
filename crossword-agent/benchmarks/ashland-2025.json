@@ -1,0 +1,27 @@
+{
+  "dataset_id": "ashland-news-2025-local-evaluation",
+  "author": "Steve Weyer",
+  "publisher": "CommuniCrossings / Ashland.news",
+  "archive_url": "https://communicrossings.com/crosswords-weyer-2025",
+  "license": "CC BY-NC-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "redistribution": "Puzzle files and converted clue/answer data are not included in this repository. Download them locally only for non-commercial evaluation; comply with attribution and share-alike requirements if you make any adaptations or redistribute them.",
+  "puzzles": [
+    {"id":"mini-2025-01","title":"Ashland News Mini #01","date":"2025-11-18","kind":"mini","url":"https://communicrossings.com/files/crossword/an/2025/mini-01.puz"},
+    {"id":"mini-2025-02","title":"Ashland News Mini #02","date":"2025-11-25","kind":"mini","url":"https://communicrossings.com/files/crossword/an/2025/mini-02.puz"},
+    {"id":"eat-ones-words-2025-01","title":"Eat One's Words #01","date":"2025-01-10","kind":"themed","url":"https://communicrossings.com/files/crossword/an/2025/eat-ones-words-01.puz"},
+    {"id":"women-herstory-2025-01","title":"Women: Her-story #01","date":"2025-03-07","kind":"themed","url":"https://communicrossings.com/files/crossword/an/2025/women-herstory-01.puz"},
+    {"id":"watershed-wandering-2025-02","title":"Watershed Wandering #02","date":"2025-03-14","kind":"themed","url":"https://communicrossings.com/files/crossword/an/2025/watershed-wandering-02.puz"},
+    {"id":"collaborative-theatre-2025-02","title":"Collaborative Theatre Project #02","date":"2025-03-21","kind":"themed","url":"https://communicrossings.com/files/crossword/an/2025/ctp-2025-02.puz"},
+    {"id":"almeda-anniversary-2025-05","title":"Almeda Anniversary #05","date":"2025-09-05","kind":"themed","url":"https://communicrossings.com/files/crossword/an/2025/almeda-05.puz"},
+    {"id":"canine-capers-2025-02","title":"Canine Capers #02","date":"2025-09-12","kind":"themed","url":"https://communicrossings.com/files/crossword/an/2025/canine-capers-02.puz"},
+    {"id":"eureka-moment-2025-05","title":"Eureka Moment #05","date":"2025-09-19","kind":"themed","url":"https://communicrossings.com/files/crossword/an/2025/eureka-moment-05.puz"},
+    {"id":"grin-and-bear-it-2025-03","title":"Grin and Bear It #03","date":"2025-09-26","kind":"themed","url":"https://communicrossings.com/files/crossword/an/2025/grin-and-bear-it-03.puz"},
+    {"id":"cascadia-commotion-2025-03","title":"Cascadia Commotion #03","date":"2025-10-03","kind":"themed","url":"https://communicrossings.com/files/crossword/an/2025/cascadia-commotion-03.puz"},
+    {"id":"first-settlers-2025-02","title":"First Settlers #02","date":"2025-10-10","kind":"themed","url":"https://communicrossings.com/files/crossword/an/2025/first-settlers-02.puz"},
+    {"id":"enjoy-the-ride-2025-03","title":"Enjoy the Ride #03","date":"2025-10-17","kind":"themed","url":"https://communicrossings.com/files/crossword/an/2025/enjoy-ride-03.puz"},
+    {"id":"yule-be-puzzled-2025-01","title":"Yule Be Puzzled #01","date":"2025-11-28","kind":"themed","url":"https://communicrossings.com/files/crossword/an/2025/yule-be-puzzled-01.puz"},
+    {"id":"turkish-delights-2025-03","title":"Turkish Delights #03","date":"2025-11-21","kind":"themed","url":"https://communicrossings.com/files/crossword/an/2025/turkish-delights-03.puz"},
+    {"id":"life-savers-2025","title":"Life Savers (CERT)","date":"2025-08-15","kind":"themed","url":"https://communicrossings.com/files/crossword/an/2025/life-savers.puz"}
+  ]
+}

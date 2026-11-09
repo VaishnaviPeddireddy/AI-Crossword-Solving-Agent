@@ -1,0 +1,3 @@
+# Core solver and tests use Python's standard library only.
+# Pillow is only required to rebuild the optional demo video:
+Pillow>=10.0

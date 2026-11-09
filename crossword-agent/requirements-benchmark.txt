@@ -1,0 +1,2 @@
+# Optional only; the solver and unit tests use the Python standard library.
+puzpy==0.6.1

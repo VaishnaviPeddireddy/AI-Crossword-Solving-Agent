@@ -1,0 +1,22 @@
+[
+  {
+    "id": "three-by-three-crossing-smoke-test",
+    "grid": ["...", "...", "..."],
+    "clues": {
+      "1A": "Feline pet",
+      "4A": "Exist",
+      "5A": "Number after nine",
+      "1D": "Domestic feline",
+      "2D": "Second-person plural of be",
+      "3D": "Cardinal number following nine"
+    },
+    "answers": {
+      "1A": "CAT",
+      "4A": "ARE",
+      "5A": "TEN",
+      "1D": "CAT",
+      "2D": "ARE",
+      "3D": "TEN"
+    }
+  }
+]

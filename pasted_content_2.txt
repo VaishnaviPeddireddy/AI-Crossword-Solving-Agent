@@ -1,0 +1,26 @@
+I checked the uploaded assignment carefully, including the **actual packaged submission ZIP**, source code, tests, evaluation output, README, and demo video.
+
+**Overall: about 90% ready, but I would NOT submit it yet.** The actual `crossword-agent-submission.zip` works correctly: I ran the included tests and **all 4 tests passed**, and `python run.py --compare --json` produced the documented results.
+
+| Assignment requirement | Status | My check |
+|---|---|---|
+| Working AI crossword agent | ✅ **Yes** | Candidate generation + constraints + AC-3 + MRV + backtracking |
+| LLM/API integration | ✅ **Yes** | OpenAI-compatible provider / Token Factory configuration |
+| Crossword validation | ✅ **Yes** | Length, pattern and crossing validation |
+| Self-correction | ✅ **Yes** | Backtracking + pattern-aware re-query |
+| Evaluation methodology | ✅ **Yes** | Word accuracy, letter accuracy, exact solve, calls, latency, tokens |
+| Evaluation results | ✅ **Yes** | Baseline 66.7%; constraints 100%; agent 100% on bundled fixture |
+| Tests | ✅ **Yes** | **4/4 passed** |
+| Clear run instructions | ✅ **Yes** | README has commands and API setup |
+| Demo video ≤1 minute | ✅ **Yes** | **47.92 seconds** |
+| GitHub repository | ❌ **Not yet** | Instructions exist, but project says it has **not been published to GitHub** |
+| Realistic evaluation dataset | ⚠️ **Weak** | Only **one 3×3 smoke puzzle** is evaluated |
+| Real Token Factory run/results | ⚠️ **Recommended** | Current headline results use deterministic demo provider |
+
+The **biggest missing requirement is GitHub**. The assignment specifically asks for a *“GitHub repository containing the source code and clear instructions for running the project.”* Your package itself says GitHub has **not been published yet**. You need to create the repo, push the contents of `crossword-agent-submission.zip`, and verify the README renders correctly.
+
+The second thing I strongly recommend is improving the evaluation before submission. Right now the README correctly admits that **100% is from one tiny 3×3 fixture**, so an interviewer can immediately ask, *“Does this actually solve real crosswords?”* Add around **10–20 varied puzzles at minimum**, run the same baseline/constraints/agent comparison, and report the real results. Even if accuracy drops to 70–80%, that's much more convincing than 100% on one synthetic puzzle.
+
+Finally, run at least **one real Token Factory model experiment**. Your architecture supports it, which is good, but showing that the hosted model actually generated candidates successfully makes this a genuine **AI-agent submission**, rather than primarily a deterministic CSP demo. Record model name, puzzles attempted, accuracy, calls/tokens, latency, and failures.
+
+So before sending it, I would complete only these **3 things**: **① publish GitHub, ② evaluate on more real puzzles, ③ run the actual Token Factory model and save those results.** After those, this would be a much stronger and fully defensible FDE submission.

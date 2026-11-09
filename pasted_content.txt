@@ -1,0 +1,124 @@
+Yes. For this take-home, your goal is not only to make an LLM answer crossword clues. You should show an **agent that solves the crossword as a constraint problem**, evaluates itself, corrects mistakes, and produces measurable results.
+
+### Recommended project flow
+
+1. **Set up Token Factory**
+   Sign up for [Token Factory](https://tokenfactory.nebius.com/?utm_source=chatgpt.com) and complete the required $0 card authorization. Then activate the provided [$100 candidate credit](https://nebius.com/promo-code?utm_promo_event_code=tokenfactory-credits-100&utm_promo_code_type=Token_Factory&utm_promo_activation_code=TOKENFACTORY-100-COKE&utm_promo_campaign_id=candidate-interviews&utm_source=chatgpt.com). You can use the hosted model API as the reasoning model for the agent.
+
+2. **Create the crossword input format**
+   Start simple. Give the program a grid plus Across/Down clues. Internally represent every answer with `clue`, `direction`, `length`, `start position`, `current pattern`, and intersecting words. For example, a 5-letter answer with known letters could have a pattern like `C _ A _ E`.
+
+3. **Build a baseline solver first**
+   Ask the LLM to generate perhaps **3–5 candidate answers per clue**, constrained by answer length. Store the candidates with confidence scores. This gives you a simple baseline you can later compare against your agent.
+
+4. **Make it actually agentic**
+   This is the important part. I would use a loop like:
+
+```text
+Crossword
+   ↓
+Parse grid + clues
+   ↓
+Pick highest-confidence clue
+   ↓
+LLM generates candidate answers
+   ↓
+Check length + known letters
+   ↓
+Place best candidate
+   ↓
+Propagate crossing letters
+   ↓
+Re-evaluate affected clues
+   ↓
+Conflict?
+ ┌─Yes → reconsider / backtrack
+ │
+ No
+ ↓
+Continue
+   ↓
+Validate complete puzzle
+```
+
+The key idea is that **the model proposes; deterministic code verifies**. For example, if Across suggests `APPLE` but a crossing Down answer requires the third character to be `R`, your agent should detect the contradiction instead of blindly accepting the LLM response.
+
+5. **Add tools to the agent**
+   Give it functions such as `get_unsolved_clues()`, `get_pattern(clue_id)`, `generate_candidates()`, `place_answer()`, `check_crossings()`, `remove_answer()` and `backtrack()`. A strong implementation selects easy/high-confidence clues first, propagates their letters, and uses those new constraints to solve harder clues.
+
+6. **Add self-correction**
+   Don't immediately lock every answer. Keep candidate lists and confidence scores. If later answers create conflicts, identify the lowest-confidence conflicting answer, remove it, regenerate candidates using the new letter pattern, and continue. Put a maximum iteration/backtracking limit so the agent cannot loop forever.
+
+7. **Build evaluation properly**
+   Prepare a dataset of crossword puzzles where you know the correct answers. Report at least **word accuracy**, **letter accuracy**, **full-puzzle solve rate**, average API calls/tokens, latency, and cost. Also separate results by clue difficulty if possible.
+
+A particularly good FDE experiment would compare three versions:
+
+| Approach | What you're testing |
+|---|---|
+| LLM only | Baseline |
+| LLM + crossing constraints | Value of deterministic validation |
+| Agent + constraints + backtracking | Value of the complete agent |
+
+For example, your final README could report something like `LLM baseline: 63% word accuracy → constraints: 78% → full agent: 86%`. **Use your actual measured numbers**, not invented results.
+
+8. **Keep the implementation clean**
+   A good repository structure would be:
+
+```text
+crossword-agent/
+├── README.md
+├── requirements.txt
+├── .env.example
+├── src/
+│   ├── agent.py
+│   ├── solver.py
+│   ├── crossword.py
+│   ├── llm.py
+│   └── evaluator.py
+├── data/
+│   └── sample_puzzles.json
+├── tests/
+│   ├── test_crossword.py
+│   └── test_solver.py
+└── run.py
+```
+
+Never commit the Token Factory API key. Put something like `TOKEN_FACTORY_API_KEY=your_key_here` in `.env.example`, while the real `.env` goes into `.gitignore`.
+
+9. **Make the demo visually clear**
+   Your CLI can show progress instead of only printing a final answer:
+
+```text
+Crossword Agent
+
+Iteration 1
+1-Across: "Feline pet" (3)
+Pattern: _ _ _
+Candidates: CAT (0.96), LYNX (rejected: length)
+Selected: CAT ✓
+
+Iteration 2
+2-Down: "Opposite of cold" (3)
+Pattern: _ _ T
+Candidates: HOT (0.98)
+Selected: HOT ✓
+
+Conflicts: 0
+
+Final accuracy: 100%
+API calls: 6
+Time: 8.4 sec
+```
+
+That makes the **agent behaviour visible to the interviewer**, which matters for a Forward Deployed Engineer assignment.
+
+10. **Write a strong README**
+    Include architecture, setup, API-key configuration, `python run.py`, example output, evaluation methodology/results, limitations, and design trade-offs. In the trade-offs section, explain why you used an LLM for semantic clue solving but ordinary Python for hard constraints, why you chose confidence-driven ordering, and when backtracking occurs.
+
+11. **Record the ≤1-minute video**
+    A simple structure is roughly **10 seconds problem/architecture, 30 seconds live run, 15 seconds evaluation, 5 seconds conclusion**. Don't spend the video installing packages. Have everything ready and demonstrate one puzzle being progressively solved.
+
+The strongest story for the follow-up interview is: **“I didn't treat the LLM as the solver of the entire puzzle. I treated it as a semantic reasoning component inside a constrained agent. Python owns crossword state and validation; the model generates candidates; crossings provide feedback; and the agent can revise low-confidence decisions. I then measured whether each additional capability actually improved accuracy.”**
+
+That gives you a project that demonstrates **LLM integration, agent design, tool use, state management, deterministic validation, self-correction, evaluation, API engineering, and product thinking**—all highly relevant to an FDE role.

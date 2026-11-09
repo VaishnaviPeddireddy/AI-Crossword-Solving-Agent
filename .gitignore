@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.DS_Store
+demo/frames/
+demo/silent.mp4
+data/real_benchmark/
+results/live/
+*.puz

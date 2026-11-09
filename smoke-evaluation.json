@@ -1,0 +1,80 @@
+[
+  {
+    "strategy": "baseline",
+    "puzzles": 1,
+    "word_accuracy": 0.6666666666666666,
+    "letter_accuracy": 0.8888888888888888,
+    "full_puzzle_solve_rate": 0.0,
+    "avg_api_calls": 6,
+    "avg_input_tokens": 0,
+    "avg_output_tokens": 0,
+    "avg_latency_seconds": 0.0001,
+    "cost_usd": null,
+    "cost_note": "Not reported: model pricing is provider/model-specific and no rate card was configured.",
+    "runs": [
+      {
+        "puzzle_id": "three-by-three-crossing-smoke-test",
+        "word_accuracy": 0.6667,
+        "letter_accuracy": 0.8889,
+        "exact_solve": false,
+        "api_calls": 6,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "latency_seconds": 0.0001,
+        "backtracks": 0
+      }
+    ]
+  },
+  {
+    "strategy": "constraints",
+    "puzzles": 1,
+    "word_accuracy": 1.0,
+    "letter_accuracy": 1.0,
+    "full_puzzle_solve_rate": 1.0,
+    "avg_api_calls": 6,
+    "avg_input_tokens": 0,
+    "avg_output_tokens": 0,
+    "avg_latency_seconds": 0.0,
+    "cost_usd": null,
+    "cost_note": "Not reported: model pricing is provider/model-specific and no rate card was configured.",
+    "runs": [
+      {
+        "puzzle_id": "three-by-three-crossing-smoke-test",
+        "word_accuracy": 1.0,
+        "letter_accuracy": 1.0,
+        "exact_solve": true,
+        "api_calls": 6,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "latency_seconds": 0.0,
+        "backtracks": 0
+      }
+    ]
+  },
+  {
+    "strategy": "agent",
+    "puzzles": 1,
+    "word_accuracy": 1.0,
+    "letter_accuracy": 1.0,
+    "full_puzzle_solve_rate": 1.0,
+    "avg_api_calls": 6,
+    "avg_input_tokens": 0,
+    "avg_output_tokens": 0,
+    "avg_latency_seconds": 0.0,
+    "cost_usd": null,
+    "cost_note": "Not reported: model pricing is provider/model-specific and no rate card was configured.",
+    "runs": [
+      {
+        "puzzle_id": "three-by-three-crossing-smoke-test",
+        "word_accuracy": 1.0,
+        "letter_accuracy": 1.0,
+        "exact_solve": true,
+        "api_calls": 6,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "latency_seconds": 0.0,
+        "backtracks": 0
+      }
+    ]
+  }
+]

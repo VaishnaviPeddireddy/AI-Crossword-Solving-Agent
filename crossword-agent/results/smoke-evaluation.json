@@ -1,0 +1,83 @@
+{
+  "comparison_note": "Each puzzle's initial candidate batch is generated once and reused across all three solver arms; full-agent pattern-aware re-queries are incremental and included in candidate_generation totals.",
+  "candidate_generation": {
+    "provider": "local-demo",
+    "model": null,
+    "puzzles": 1,
+    "calls": 6,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "latency_seconds": 0.0002,
+    "failures": [],
+    "cost_usd": null,
+    "cost_note": "Not estimated until a dated model rate card is verified."
+  },
+  "strategies": [
+    {
+      "strategy": "baseline",
+      "puzzles": 1,
+      "word_accuracy": 0.6666666666666666,
+      "letter_accuracy": 0.8888888888888888,
+      "full_puzzle_solve_rate": 0.0,
+      "avg_backtracks": 0,
+      "avg_decisions": 0,
+      "agent_pattern_requery_calls": 0,
+      "runs": [
+        {
+          "puzzle_id": "three-by-three-crossing-smoke-test",
+          "word_accuracy": 0.6667,
+          "letter_accuracy": 0.8889,
+          "exact_solve": false,
+          "backtracks": 0,
+          "decisions": 0,
+          "incremental_model_calls": 0,
+          "error": null
+        }
+      ]
+    },
+    {
+      "strategy": "constraints",
+      "puzzles": 1,
+      "word_accuracy": 1.0,
+      "letter_accuracy": 1.0,
+      "full_puzzle_solve_rate": 1.0,
+      "avg_backtracks": 0,
+      "avg_decisions": 0,
+      "agent_pattern_requery_calls": 0,
+      "runs": [
+        {
+          "puzzle_id": "three-by-three-crossing-smoke-test",
+          "word_accuracy": 1.0,
+          "letter_accuracy": 1.0,
+          "exact_solve": true,
+          "backtracks": 0,
+          "decisions": 0,
+          "incremental_model_calls": 0,
+          "error": null
+        }
+      ]
+    },
+    {
+      "strategy": "agent",
+      "puzzles": 1,
+      "word_accuracy": 1.0,
+      "letter_accuracy": 1.0,
+      "full_puzzle_solve_rate": 1.0,
+      "avg_backtracks": 0,
+      "avg_decisions": 0,
+      "agent_pattern_requery_calls": 0,
+      "runs": [
+        {
+          "puzzle_id": "three-by-three-crossing-smoke-test",
+          "word_accuracy": 1.0,
+          "letter_accuracy": 1.0,
+          "exact_solve": true,
+          "backtracks": 0,
+          "decisions": 0,
+          "incremental_model_calls": 0,
+          "error": null
+        }
+      ]
+    }
+  ]
+}
